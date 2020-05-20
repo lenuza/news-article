@@ -4,10 +4,10 @@ const express = require('express')
 
 const app = express()
 
-app.use(express.static('client'))
+app.use(express.static('dist'))
 
 app.get('/', function (req, res) {
-    res.sendFile('client/index.html')
+    res.sendFile('dist/index.html')
 })
 
 // set port
