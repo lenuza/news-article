@@ -6,9 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     entry: './src/client/index.js',
-    mode: 'development',
-    devtool: 'source-map',
-    stats: 'verbose',
+    mode: 'production',
     module: {
         rules: [
             {
@@ -23,7 +21,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+                use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
             }
         ]
     },
@@ -32,14 +30,8 @@ module.exports = {
             template: "./src/client/index.html",
             filename: "./index.html",
         }),
-        new CleanWebpackPlugin({
-            // Simulate the removal of files
-            dry: true,
-            // Write Logs to Console
-            verbose: true,
-            // Automatically remove all unused webpack assets on rebuild
-            cleanStaleWebpackAssets: true,
-            protectWebpackAssets: false
-        })
+        new MiniCssExtractPlugin({
+            filename: '[name].css'
+        }),
     ]
 }
