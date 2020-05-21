@@ -1,7 +1,11 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>News Article</title><link href="main.css" rel="stylesheet"></head><body><h1>News Article</h1><main class="main"><h2 class="main-title">BBC world news</h2><div id="news" class="news-content">Wearing masks is being made compulsory in Spain both indoors and out in public if social distancing is not possible. Only children under six and people with health issues are exempt from the law, which comes into force on Thursday. Many European countries have now made wearing masks a requirement on public transport but the Spanish decree goes further. Spain has seen one of the worst Covid-19 outbreaks in Europe but is now easing the lockdown gradually. It already requires the wearing of masks on public transport and is now strengthening the rules across the population. Spain has reported almost 28,000 deaths and 232,000 infections since March but the rate of infection has declined. Spain had imposed some of the toughest measures on the continent, including keeping children indoors for six weeks. Prime Minister Pedro Sánchez addressed parliament on Wednesday ahead of a vote on extending the state of alert for two more weeks.<p class="news-info">News taken to test from the BBC world site: https://www.bbc.com/news/world-europe-52735166</p></div></main><script>// Check that service workers are supported
-        if ('serviceWorker' in navigator) {
-            // Use the window load event to keep the page load performant
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>News Article</title><link href="main.css" rel="stylesheet"></head><body><h1>News Article</h1><main class="main"><h2 class="main-title">BBC world news</h2><div id="news" class="news-content">Wearing masks is being made compulsory in Spain both indoors and out in public if social distancing is not</div><p class="news-info">News taken to test from the BBC world site: https://www.bbc.com/news/world-europe-52735166</p></main><script>if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log(`Service Worker registered! Scope: ${registration.scope}`);
+                    })
+                    .catch(err => {
+                        console.log(`Service Worker registration failed: ${err}`);
+                    });
             });
         }</script><script src="main.js"></script></body></html>
