@@ -4,20 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Article</title>
+    <title>news article</title>
 </head>
 
 <body>
-    <h1>News Article</h1>
+    <h1>news article</h1>
 
     <main class="main">
-        <h2 class="main-title">BBC world news</h2>
+        <h2 class="main-title">check an article</h2>
         <div id="news" class="news-content">
-            Wearing masks is being made compulsory in Spain both indoors and out in public if social distancing is not
+            <form class="news-form" action="">
+                <label for="newArticle">enter website url or text</label>
+                <input type="text" id="newArticle" placeholder="enter website url or text">
+                <button id="generate" onclick="getArticle()" type="button">Submit</button>
+            </form>
         </div>
-        <p class="news-info">
+        <!-- <p class="news-info">
             News taken to test from the BBC world site: https://www.bbc.com/news/world-europe-52735166
-        </p>
+        </p> -->
+        <div class="display-results"></div>
     </main>
 
     <!-- <script>

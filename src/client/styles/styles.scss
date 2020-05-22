@@ -1,7 +1,55 @@
 body {
-    background-color: green;
+    background-color: rgb(20, 19, 44);
+    color: #ddd;
 
-    h1 {
+    h1,h2,h3,h4,h5,h6,button {
         text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.news-content {
+    width: 60%;
+}
+
+.news-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    font-size: 1.2em;
+
+    label {
+        width: 100%;
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 1.2em;
+        margin-bottom: 0.1em;
+        text-decoration: underline;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        height: 1.8em;
+
+        &::placeholder {
+            text-transform: capitalize;
+        }
+    }
+
+    button {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0.3em;
+        cursor: pointer;
+        font-weight: bolder;
     }
 }
