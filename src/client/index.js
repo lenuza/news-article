@@ -1,18 +1,19 @@
-import './styles.scss'
-var aylien = require("aylien_textapi")
+import './styles/styles.scss'
 
-var textapi = new aylien({
-    application_id: process.env.API_ID,
-    application_key: process.env.API_KEY
-})
+// var aylien = require("aylien_textapi")
 
-var news = document.getElementById('news').innerHTML
-console.log(news)
+// var textapi = new aylien({
+//     application_id: process.env.API_ID,
+//     application_key: process.env.API_KEY
+// })
 
-textapi.sentiment({
-    'text': news
-}, function(error, response) {
-    if (error === null) {
-        console.log(response);
-        }
-    });
+// var news = document.getElementById('news').innerHTML
+// console.log(news)
+
+// textapi.sentiment({
+//     'text': news
+// }, function(error, response) {
+//     if (error === null) {
+//         console.log(response);
+//         }
+//     });
