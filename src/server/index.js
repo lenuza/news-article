@@ -1,23 +1,15 @@
-const path  = require('path')
+const path = require('path')
 const express = require('express')
-var aylien = require("aylien_textapi")
-const dotenv = require('dotenv');
+const aylien = require("aylien_textapi")
+const dotenv = require('dotenv')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+// const getArticleUrl = require('../client/js/getURL')
 
 dotenv.config()
 
-const app = express()
-
-app.use(express.static('dist'))
-
-app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
-})
-
-// set port
-const port = process.env.port || 8000;
-const server = app.listen(port, () => {
-    console.log(`Hello, listening on port ${port}`);
-});
+// var url = getArticleUrl
+const URL = "http://techcrunch.com/2015/07/16/microsoft-will-never-give-up-on-mobile"
 
 // set aylien API credentias
 var textapi = new aylien({
@@ -25,13 +17,44 @@ var textapi = new aylien({
     application_key: process.env.API_KEY
 })
 
-// var news = document.getElementById('news').innerHTML;
-// console.log(news)
+const app = express()
 
-textapi.sentiment({
-    'text': ' Wearing masks is being made compulsory in Spain both indoors and out in public if social distancing is not possible.Only children under six and people with health issues are exempt from the law, which comes into force on Thursday. Many European countries have now made wearing masks a requirement on public transport but the Spanish decree goes further. Spain has seen one of the worst Covid-19 outbreaks in Europe but is now easing the lockdown gradually. It already requires the wearing of masks on public transport and is now strengthening the rules across the population. Spain has reported almost 28,000 deaths and 232,000 infections since March but the rate of infection has declined. Spain had imposed some of the toughest measures on the continent, including keeping children indoors for six weeks. Prime Minister Pedro Sánchez addressed parliament on Wednesday ahead of a vote on extending the state of alert for two more weeks.'
-}, function(error, response) {
-    if (error === null) {
-        console.log(response);
+app.use(express.static('dist'))
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+app.get('/', function (req, res) {
+    res.sendFile('src/client/view/index.html')
+})
+
+app.get('/text/:url', function (req, res) {
+    textapi.classify({
+        url: req.params.url
+    }, function (error, response) {
+        if (error === null) {
+            // response['categories'].forEach(function (c) {
+            //     console.log(c);
+            // });
+            return res.json(response);
         }
+
+        console.error(err);
     });
+});
+
+// set port
+const port = process.env.port || 8000;
+const server = app.listen(port, () => {
+    console.log(`Hello, listening on port ${port}`);
+});
+
+// textapi.sentiment({
+//     'text': URL
+// }, function (error, response) {
+//     if (error === null) {
+//         return console.log(response);
+//     }
+
+//     console.error(error);
+// });

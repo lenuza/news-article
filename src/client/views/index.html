@@ -15,14 +15,14 @@
         <div id="news" class="news-content">
             <form class="news-form" action="">
                 <label for="newArticle">enter website url or text</label>
-                <input type="text" id="newArticle" placeholder="enter website url or text">
-                <button id="generate" onclick="getArticle()" type="button">Submit</button>
+                <input type="text" id="newArticle" value="http://techcrunch.com/2015/07/16/microsoft-will-never-give-up-on-mobile" placeholder="enter website url or text">
+                <button id="generate" onclick="Client.updateArticleUrl()" type="button">Submit</button>
             </form>
         </div>
         <!-- <p class="news-info">
             News taken to test from the BBC world site: https://www.bbc.com/news/world-europe-52735166
         </p> -->
-        <div class="display-results"></div>
+        <div id="results" class="display-results"></div>
     </main>
 
     <!-- <script>

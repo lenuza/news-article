@@ -4,7 +4,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
-    entry: './src/client/index.js',
+    entry: [
+        './src/client/index.js'
+    ],
+    devServer: {
+        proxy: {
+            '/text': {
+                target: 'http://localhost:8000',
+                pathRewrite: {'^/text' : ''}
+            }
+        }
+    },
     mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',
