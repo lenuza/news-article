@@ -9,15 +9,15 @@ module.exports = {
     ],
     devServer: {
         proxy: {
-            '/text': {
-                target: 'http://localhost:8000',
-                pathRewrite: {'^/text' : ''}
+            '/api': {
+                'target': 'http://localhost:8000'
             }
         }
     },
     mode: 'development',
     devtool: 'source-map',
-    stats: 'verbose',
+    stats: 'errors-warnings',
+    target: 'web',
     output: {
         libraryTarget: 'var',
         library: 'Client'

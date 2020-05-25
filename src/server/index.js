@@ -9,7 +9,7 @@ const bodyParser = require('body-parser')
 dotenv.config()
 
 // var url = getArticleUrl
-const URL = "http://techcrunch.com/2015/07/16/microsoft-will-never-give-up-on-mobile"
+//const URL = "http://techcrunch.com/2015/07/16/microsoft-will-never-give-up-on-mobile"
 
 // set aylien API credentias
 var textapi = new aylien({
@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
     res.sendFile('src/client/view/index.html')
 })
 
-app.get('/text/:url', function (req, res) {
+app.get('/api/text/:url', function (req, res) {
     textapi.classify({
         url: req.params.url
     }, function (error, response) {
@@ -36,6 +36,7 @@ app.get('/text/:url', function (req, res) {
             // response['categories'].forEach(function (c) {
             //     console.log(c);
             // });
+            console.log(response)
             return res.json(response);
         }
 

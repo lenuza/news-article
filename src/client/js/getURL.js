@@ -2,12 +2,14 @@ function updateArticleUrl () {
     const url = document.getElementById('newArticle').value;
     const results = document.getElementById('results');
     console.log(url)
-    return fetch(`http://localhost:8000/text/${encodeURIComponent(url)}`)
+    fetch(`/api/text/${encodeURIComponent(url)}`)
         .then(res => {
             res.text()
-                .then(txt => (results.innerHTML = JSON.parse(txt).text));
+                .then(txt => (results.innerHTML = JSON.parse(txt).categories[0].label));
         })
+        .then (document.getElementById('newArticle').value = '')
         .catch(console.error);
+
 }
 
-export { updateArticleUrl };
+export { updateArticleUrl }
