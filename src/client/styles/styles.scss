@@ -19,6 +19,16 @@ body {
     width: 60%;
 }
 
+.display-results {
+    margin-top: 1em;
+    font-size: 1.2em;
+    font-weight: bolder;
+
+    span {
+        text-transform: capitalize;
+    }
+}
+
 .news-form {
     display: flex;
     flex-direction: column;

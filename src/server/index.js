@@ -4,11 +4,9 @@ const aylien = require("aylien_textapi")
 const dotenv = require('dotenv')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-// const getArticleUrl = require('../client/js/getURL')
 
 dotenv.config()
 
-// var url = getArticleUrl
 //const URL = "http://techcrunch.com/2015/07/16/microsoft-will-never-give-up-on-mobile"
 
 // set aylien API credentias
@@ -33,9 +31,9 @@ app.get('/api/text/:url', function (req, res) {
         url: req.params.url
     }, function (error, response) {
         if (error === null) {
-            // response['categories'].forEach(function (c) {
-            //     console.log(c);
-            // });
+            response['categories'].forEach(function (c) {
+                console.log(c);
+            });
             console.log(response)
             return res.json(response);
         }

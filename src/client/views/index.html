@@ -19,21 +19,10 @@
                 <button id="generate" onclick="Client.updateArticleUrl()" type="button">Submit</button>
             </form>
         </div>
-        <!-- <p class="news-info">
-            News taken to test from the BBC world site: https://www.bbc.com/news/world-europe-52735166
-        </p> -->
+
         <div id="results" class="display-results"></div>
     </main>
 
-    <!-- <script>
-        // Check that service workers are supported
-        if ('serviceWorker' in navigator) {
-            // Use the window load event to keep the page load performant
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
-            });
-        }
-    </script> -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
