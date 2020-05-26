@@ -13,10 +13,10 @@
     <main class="main">
         <h2 class="main-title">check an article</h2>
         <div id="news" class="news-content">
-            <form class="news-form" action="">
-                <label for="newArticle">enter website url or text</label>
-                <input type="text" id="newArticle" placeholder="enter website url or text">
-                <button id="generate" onclick="Client.updateArticleUrl()" type="button">Submit</button>
+            <form class="news-form" onsubmit="Client.updateArticleUrl()" action="">
+                <label for="newArticle">enter an article url</label>
+                <input type="text" id="newArticle" pattern="https?://.+" placeholder="enter website url" required>
+                <button id="generate" type="submit">Submit</button>
             </form>
         </div>
 

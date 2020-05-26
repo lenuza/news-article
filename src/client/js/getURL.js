@@ -1,4 +1,5 @@
-function updateArticleUrl () {
+function updateArticleUrl (e) {
+    event.preventDefault()
     const url = document.getElementById('newArticle').value;
     const results = document.getElementById('results');
     console.log(url)
