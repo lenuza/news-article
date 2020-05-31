@@ -1,8 +1,12 @@
-import { updateArticleUrl } from './js/getURL'
-import { fetchArticleUrl } from './js/fetchURL'
+import { updateArticleUrl, fetchData } from './js/updateArticleUrl'
+import { fetchArticleUrl, displayData, consoleOutput } from './js/fetchArticleUrl'
+// import { consoleOutput } from '../../tests/util'
 import './styles/styles.scss'
 
 export {
     updateArticleUrl,
-    fetchArticleUrl
+    fetchArticleUrl,
+    consoleOutput,
+    fetchData,
+    displayData
 }
