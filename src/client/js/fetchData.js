@@ -1,5 +1,3 @@
-// const { newURL } = require('./updateArticleUrl')
-
 const fetchData = (newURL) => {
     console.log('helllllo')
     return fetch(`/api/text/${encodeURIComponent(newURL)}`)

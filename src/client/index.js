@@ -1,10 +1,10 @@
-import { updateArticleUrl, fetchData } from './js/updateArticleUrl'
+import { newUrlValue, fetchData } from './js/newUrlValue'
 import { fetchArticleUrl, displayData, consoleOutput } from './js/fetchArticleUrl'
 // import { consoleOutput } from '../../tests/util'
 import './styles/styles.scss'
 
 export {
-    updateArticleUrl,
+    newUrlValue,
     fetchArticleUrl,
     consoleOutput,
     fetchData,

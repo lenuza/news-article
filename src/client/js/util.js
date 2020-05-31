@@ -1,3 +1,4 @@
+// const { displayData } = require('../js/fetchArticleUrl')
 
 const consoleOutput = (newURL) => {
     Client.displayData(newURL).then(consoleOutput => {

@@ -1,11 +1,20 @@
-const { fetchData } = require('./updateArticleUrl')
+const { fetchData } = require('./newUrlValue')
 const { consoleOutput } = require('./util')
 const results = document.getElementById('results')
 
-    const displayData = (newURL) => {
-        return fetchData(newURL)
-            .then(text => {
-                results.innerHTML = '<span>category: </span>' + JSON.parse(text).categories[0].label
+const buildElement = (newURL) => {
+    return fetchData(newURL)
+        .then(text => {
+            return '<span>category: </span>' + JSON.parse(text).categories[0].label
+        })
+        .catch(console.log)
+
+    };
+
+const displayData = (newURL) =>
+        buildElement(newURL)
+            .then(el => {
+                results.innerHTML = el
                 const consoleOutput = JSON.parse(text).text
                 return consoleOutput
             })
@@ -13,10 +22,9 @@ const results = document.getElementById('results')
                 console.log(err)
             })
 
-    }
-
-    exports.displayData = displayData
-    exports.consoleOutput = consoleOutput
+exports.displayData = displayData
+exports.buildElement = buildElement
+exports.consoleOutput = consoleOutput
 
 
 

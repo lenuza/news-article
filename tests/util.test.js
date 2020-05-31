@@ -1,10 +1,9 @@
-jest.mock('../src/client/js/__mocks__/fetchData.js')
-const { displayData } = require('../src/client/js/fetchArticleUrl')
-// const { consoleOutput } = require('./util')
+jest.mock('../src/client/js/fetchData.js')
+const { buildElement } = require('../src/client/js/fetchArticleUrl')
+// const { consoleOutput } = require('../src/client/js/util')
 
-test('it should print the text of the fetched data', () => {
-    displayData().then(transformOutput => {
-        expect(transformOutput).toBe('MICROSOFT WILL NEVER GIVE UP ON MOBILE')
-        // done()
+test('Check if fetchData label match', () => {
+    return buildElement('').then(text => {
+        return expect(text).toBe('<span>category: </span>Little Bears');
     })
 })
