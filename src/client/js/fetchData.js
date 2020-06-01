@@ -1,5 +1,4 @@
 const fetchData = (newURL) => {
-    console.log('helllllo')
     return fetch(`/api/text/${encodeURIComponent(newURL)}`)
         .then(res => {
             return res.text()

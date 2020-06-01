@@ -7,7 +7,7 @@ const newUrlValue = () => {
     const newURL = document.getElementById('newArticle').value
     console.log(newURL)
 
-    Client.consoleOutput(newURL)
+    Client.displayData(newURL)
 
     document.getElementById('newArticle').value = ''
 }
