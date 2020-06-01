@@ -7,7 +7,7 @@ const buildData = (newURL) => {
             const output = '<span>category: </span>' + JSON.parse(text).categories[0].label
             return output
         })
-        // .catch(console.log)
+        .catch(console.log)
 }
 
 const displayData = (newURL) => {
@@ -16,13 +16,8 @@ const displayData = (newURL) => {
             output = `<p> ${output} </p>`
             return results.innerHTML = output
         })
-        // .catch(err => {
-        //     console.log(err)
-        // })
+        .catch(console.log)
 }
 
 exports.displayData = displayData
 exports.buildData = buildData
-
-
-

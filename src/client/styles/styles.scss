@@ -2,7 +2,13 @@ body {
     background-color: rgb(20, 19, 44);
     color: #ddd;
 
-    h1,h2,h3,h4,h5,h6,button {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    button {
         text-align: center;
         text-transform: uppercase;
     }
@@ -15,7 +21,8 @@ body {
     align-items: center;
 }
 
-.news-content, .description {
+.news-content,
+.description {
     width: 60%;
 }
 

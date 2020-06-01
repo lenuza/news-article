@@ -1,4 +1,3 @@
-global.fetch = require("node-fetch")
 const { fetchData } = require('./fetchData')
 
 const newUrlValue = () => {
@@ -7,7 +6,7 @@ const newUrlValue = () => {
     console.log(newURL)
 
     Client.displayData(newURL)
-
+//because of the preventDefault manually deleting the input content
     document.getElementById('newArticle').value = ''
 }
 

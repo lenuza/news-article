@@ -7,8 +7,6 @@ const bodyParser = require('body-parser')
 
 dotenv.config()
 
-//const URL = "http://techcrunch.com/2015/07/16/microsoft-will-never-give-up-on-mobile"
-
 // set aylien API credentias
 var textapi = new aylien({
     application_id: process.env.API_ID,
@@ -47,13 +45,3 @@ const port = process.env.port || 8000;
 const server = app.listen(port, () => {
     console.log(`Hello, listening on port ${port}`);
 });
-
-// textapi.sentiment({
-//     'text': URL
-// }, function (error, response) {
-//     if (error === null) {
-//         return console.log(response);
-//     }
-
-//     console.error(error);
-// });
