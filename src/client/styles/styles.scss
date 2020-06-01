@@ -15,17 +15,31 @@ body {
     align-items: center;
 }
 
-.news-content {
+.news-content, .description {
     width: 60%;
+}
+
+.description {
+    font-size: 1.5em;
+    text-align: justify;
+    margin-bottom: 1.2em;
 }
 
 .display-results {
     margin-top: 1em;
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bolder;
+    line-height: 3em;
+    padding: 0.1em;
 
     span {
         text-transform: capitalize;
+    }
+
+    p:first-child {
+        border: 1px double #ddd;
+        text-decoration-line: underline;
+        text-decoration-style: line;
     }
 }
 

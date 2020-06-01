@@ -1,4 +1,3 @@
-// const fetch = require('node-fetch')
 global.fetch = require("node-fetch")
 const { fetchData } = require('./fetchData')
 

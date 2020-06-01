@@ -13,6 +13,7 @@ const buildData = (newURL) => {
 const displayData = (newURL) => {
     buildData(newURL)
         .then(output => {
+            output = `<p> ${output} </p>`
             return results.innerHTML = output
         })
         // .catch(err => {
