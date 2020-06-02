@@ -26,12 +26,12 @@ const displayData = (newURL) => {
             for (let [key, value] of Object.entries(output)) {
                 if(key != 'categories') {
                     const paragraph = document.createElement('p')
-                    paragraph.innerHTML = '<span>' + key + '</span>  ' + value
+                    paragraph.innerHTML = '<span>' + key + '</span> :  ' + value
                     results.appendChild(paragraph)
                 }
                 else {
                     const paragraph = document.createElement('p')
-                    paragraph.innerHTML = '<span>' + key + '</span>  ' + value[0].label
+                    paragraph.innerHTML = '<span>' + key + '</span> :  ' + value[0].label
                     results.appendChild(paragraph)
                 }
             }

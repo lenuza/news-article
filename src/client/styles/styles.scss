@@ -33,18 +33,33 @@ body {
 }
 
 .display-results {
+    margin: auto;
     margin-top: 1em;
     padding: 0.1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
 
     p {
+        box-sizing: border-box;
+        border: 1px solid #ddd;
         font-size: 1.2em;
-        text-align: left;
+        text-align: center;
+        width: 50%;
     }
 
     p:first-child {
+        box-sizing: border-box;
         border: 1px solid #ddd;
         font-size: 1em;
         text-align: justify;
+        width: 100%;
+    }
+
+    span {
+        font-weight: bolder;
+        text-transform: capitalize;
     }
 }
 
