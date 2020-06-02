@@ -33,18 +33,18 @@ body {
 }
 
 .display-results {
-    margin: auto;
-    margin-top: 1em;
-    padding: 0.1em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    font-size: 1.1em;
+    margin: auto;
+    margin-top: 1em;
+    padding: 0.1em;
     width: 80%;
 
     p {
         box-sizing: border-box;
         border: 1px solid #ddd;
-        font-size: 1.2em;
         text-align: center;
         width: 50%;
     }
@@ -52,7 +52,7 @@ body {
     p:first-child {
         box-sizing: border-box;
         border: 1px solid #ddd;
-        font-size: 1em;
+        padding:1em;
         text-align: justify;
         width: 100%;
     }
@@ -60,6 +60,7 @@ body {
     span {
         font-weight: bolder;
         text-transform: capitalize;
+        font-size: 1.2em;
     }
 }
 
