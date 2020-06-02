@@ -3,6 +3,6 @@ const { buildData } = require('../src/client/js/buildDisplayData')
 
 test('Check if fetchData label match', () => {
     return buildData().then(text => {
-        return expect(text).toBe('<span>category: </span>Little Bears');
+        return expect(text).toStrictEqual(["narwhals are unicorns of the sea",  "en",  "Little Bears"]);
     })
 })
