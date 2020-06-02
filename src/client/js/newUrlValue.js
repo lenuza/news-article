@@ -7,7 +7,7 @@ const newUrlValue = () => {
     console.log(newURL)
 
     Client.displayData(newURL)
-//because of the preventDefault manually deleting the input content
+    //because of the preventDefault manually deleting the input content
     document.getElementById('newArticle').value = ''
 }
 
