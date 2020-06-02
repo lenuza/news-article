@@ -34,19 +34,17 @@ body {
 
 .display-results {
     margin-top: 1em;
-    font-size: 1.5em;
-    font-weight: bolder;
-    line-height: 3em;
     padding: 0.1em;
 
-    span {
-        text-transform: capitalize;
+    p {
+        font-size: 1.2em;
+        text-align: left;
     }
 
     p:first-child {
-        border: 1px double #ddd;
-        text-decoration-line: underline;
-        text-decoration-style: line;
+        border: 1px solid #ddd;
+        font-size: 1em;
+        text-align: justify;
     }
 }
 
